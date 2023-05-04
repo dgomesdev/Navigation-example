@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/personalDataFragment">
+
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="com.dgomesdev.navigation_example.fragments.PersonalDataFragment"
+        android:label="PersonalDataFragment"
+        tools:layout="@layout/fragment_personal_data">
+        <action
+            android:id="@+id/go_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.dgomesdev.navigation_example.fragments.AddressFragment"
+        android:label="AddressFragment"
+        tools:layout="@layout/fragment_address">
+
+        <argument
+            android:name="model"
+            app:argType="com.dgomesdev.navigation_example.model.PersonModel" />
+        <action
+            android:id="@+id/go_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.dgomesdev.navigation_example.fragments.SummaryFragment"
+        android:label="SummaryFragment"
+        tools:layout="@layout/fragment_summary">
+
+        <argument
+            android:name="model"
+            app:argType="com.dgomesdev.navigation_example.model.PersonModel" />
+    </fragment>
+
+</navigation>
